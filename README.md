@@ -1,3 +1,3 @@
 # SchoolManagementSystem
 
-PHP JavaScript HTML5 CSS Full CRUD App
+Implement Using ReactJS NodeJS ExpreeJS MongoDB

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link , Redirect} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
@@ -46,14 +46,4 @@ export default class StudentTableRow extends Component {
             </tr>
         );
     }
-
-    renderRedirect = () => {
-        if (this.props.obj._id !== '' && this.props.obj.name !== '') {
-          return (
-            <Redirect 
-              to={`/edit-student/${this.props.obj._id}/${this.props.obj.name}`}
-            />
-          );
-        }
-      };
 }

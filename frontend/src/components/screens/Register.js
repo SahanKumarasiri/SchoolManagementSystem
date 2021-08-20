@@ -13,7 +13,7 @@ const RegisterScreen = ({history})=>{
 
     useEffect(()=>{
         if(localStorage.getItem("authToken")){  //push a user if he already logged in
-            history.push("/");
+            history.push("/login");
         }
     } , [history])
 
@@ -42,7 +42,7 @@ const RegisterScreen = ({history})=>{
 
             localStorage.setItem("authToken" , data.token);
 
-            history.push("/");
+            history.push("/login");
 
         } catch (error) {
             setError(error.response.data.error);

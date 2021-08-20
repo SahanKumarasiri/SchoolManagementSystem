@@ -4,6 +4,8 @@
 
 const express = require("express"); //Fast, unopinionated, minimalist web framework for node.
 
+const mongoose = require("mongoose");
+
 const cors = require("cors"); /*CORS is a node.js package for providing a Connect/Express 
                                 middleware that can be used to enable CORS with various options.*/
 
@@ -15,9 +17,20 @@ const errorHandler = require("./middleware/error");
 
 require("dotenv").config();  //these line is necessary for configuration .env file
 
-const connectDB = require("./config/db");
+const URL = process.env.MONGODB_URL;
 
-connectDB(); //call db connection
+mongoose.connect(URL , {  //define connection
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
+    
+const connection = mongoose.connection; //assign database connection for a constant variable
+
+connection.once("open" , () => { //open connection for one time
+    console.log("MongoDB connection was successful"); //display message in console when the connection was successful
+});
 
 const app = express();
 

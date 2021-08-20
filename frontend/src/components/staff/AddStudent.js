@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 
-const Image = () => {
+const AddStudent = () => {
 
     const [loading, setLoading] = useState(false); //additional 
     const [isError, setIsError] = useState(false);
@@ -163,4 +163,4 @@ const Image = () => {
     );
 }
 
-export default Image;
+export default AddStudent;

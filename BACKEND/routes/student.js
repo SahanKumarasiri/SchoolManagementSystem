@@ -6,7 +6,7 @@ let User = require('../models/student');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, '../frontend/public/images');
+        cb(null, './frontend/public/images');
     },
     filename: function(req, file, cb) {   
         cb(null, uuidv4() + '-' + Date.now() + path.extname(file.originalname));
